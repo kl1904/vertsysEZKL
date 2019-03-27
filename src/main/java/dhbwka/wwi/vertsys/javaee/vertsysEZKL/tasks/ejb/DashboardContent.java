@@ -7,14 +7,14 @@
  * Dieser Quellcode ist lizenziert unter einer
  * Creative Commons Namensnennung 4.0 International Lizenz.
  */
-package dhbwka.wwi.vertsys.javaee.jtodo.tasks.ejb;
+package dhbwka.wwi.vertsys.javaee.vertsysEZKL.tasks.ejb;
 
-import dhbwka.wwi.vertsys.javaee.jtodo.common.web.WebUtils;
-import dhbwka.wwi.vertsys.javaee.jtodo.dashboard.ejb.DashboardContentProvider;
-import dhbwka.wwi.vertsys.javaee.jtodo.dashboard.ejb.DashboardSection;
-import dhbwka.wwi.vertsys.javaee.jtodo.dashboard.ejb.DashboardTile;
-import dhbwka.wwi.vertsys.javaee.jtodo.tasks.jpa.Category;
-import dhbwka.wwi.vertsys.javaee.jtodo.tasks.jpa.TaskStatus;
+import dhbwka.wwi.vertsys.javaee.vertsysEZKL.common.web.WebUtils;
+import dhbwka.wwi.vertsys.javaee.vertsysEZKL.dashboard.ejb.DashboardContentProvider;
+import dhbwka.wwi.vertsys.javaee.vertsysEZKL.dashboard.ejb.DashboardSection;
+import dhbwka.wwi.vertsys.javaee.vertsysEZKL.dashboard.ejb.DashboardTile;
+import dhbwka.wwi.vertsys.javaee.vertsysEZKL.tasks.jpa.Category;
+import dhbwka.wwi.vertsys.javaee.vertsysEZKL.tasks.jpa.TaskStatus;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;

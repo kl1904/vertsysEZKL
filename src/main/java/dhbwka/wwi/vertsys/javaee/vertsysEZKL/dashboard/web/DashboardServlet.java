@@ -7,10 +7,10 @@
  * Dieser Quellcode ist lizenziert unter einer
  * Creative Commons Namensnennung 4.0 International Lizenz.
  */
-package dhbwka.wwi.vertsys.javaee.jtodo.dashboard.web;
+package dhbwka.wwi.vertsys.javaee.vertsysEZKL.dashboard.web;
 
-import dhbwka.wwi.vertsys.javaee.jtodo.dashboard.ejb.DashboardContentProvider;
-import dhbwka.wwi.vertsys.javaee.jtodo.dashboard.ejb.DashboardSection;
+import dhbwka.wwi.vertsys.javaee.vertsysEZKL.dashboard.ejb.DashboardContentProvider;
+import dhbwka.wwi.vertsys.javaee.vertsysEZKL.dashboard.ejb.DashboardSection;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;

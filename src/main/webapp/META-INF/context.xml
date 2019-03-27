@@ -12,8 +12,8 @@
            userCredCol="password_hash"
            userNameCol="username"
            
-           userRoleTable="Gerichte" 
-           userTable="Essen">
+           userRoleTable="VERTSYSEZKL.GERICHTE" 
+           userTable="VERTSYSEZKL.ESSEN">
       <CredentialHandler
           algorithm="SHA-256" 
           className="org.apache.catalina.realm.MessageDigestCredentialHandler"/>

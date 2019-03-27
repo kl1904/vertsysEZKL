@@ -7,16 +7,16 @@
  * Dieser Quellcode ist lizenziert unter einer
  * Creative Commons Namensnennung 4.0 International Lizenz.
  */
-package dhbwka.wwi.vertsys.javaee.jtodo.tasks.web;
+package dhbwka.wwi.vertsys.javaee.vertsysEZKL.tasks.web;
 
-import dhbwka.wwi.vertsys.javaee.jtodo.common.web.WebUtils;
-import dhbwka.wwi.vertsys.javaee.jtodo.common.web.FormValues;
-import dhbwka.wwi.vertsys.javaee.jtodo.tasks.ejb.CategoryBean;
-import dhbwka.wwi.vertsys.javaee.jtodo.tasks.ejb.TaskBean;
-import dhbwka.wwi.vertsys.javaee.jtodo.common.ejb.UserBean;
-import dhbwka.wwi.vertsys.javaee.jtodo.common.ejb.ValidationBean;
-import dhbwka.wwi.vertsys.javaee.jtodo.tasks.jpa.Task;
-import dhbwka.wwi.vertsys.javaee.jtodo.tasks.jpa.TaskStatus;
+import dhbwka.wwi.vertsys.javaee.vertsysEZKL.common.web.WebUtils;
+import dhbwka.wwi.vertsys.javaee.vertsysEZKL.common.web.FormValues;
+import dhbwka.wwi.vertsys.javaee.vertsysEZKL.tasks.ejb.CategoryBean;
+import dhbwka.wwi.vertsys.javaee.vertsysEZKL.tasks.ejb.TaskBean;
+import dhbwka.wwi.vertsys.javaee.vertsysEZKL.common.ejb.UserBean;
+import dhbwka.wwi.vertsys.javaee.vertsysEZKL.common.ejb.ValidationBean;
+import dhbwka.wwi.vertsys.javaee.vertsysEZKL.tasks.jpa.Task;
+import dhbwka.wwi.vertsys.javaee.vertsysEZKL.tasks.jpa.TaskStatus;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.Time;

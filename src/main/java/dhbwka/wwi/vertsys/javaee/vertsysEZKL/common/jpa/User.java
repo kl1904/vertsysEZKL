@@ -7,9 +7,9 @@
  * Dieser Quellcode ist lizenziert unter einer
  * Creative Commons Namensnennung 4.0 International Lizenz.
  */
-package dhbwka.wwi.vertsys.javaee.jtodo.common.jpa;
+package dhbwka.wwi.vertsys.javaee.vertsysEZKL.common.jpa;
 
-import dhbwka.wwi.vertsys.javaee.jtodo.tasks.jpa.Task;
+import dhbwka.wwi.vertsys.javaee.vertsysEZKL.tasks.jpa.Task;
 import java.io.Serializable;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;

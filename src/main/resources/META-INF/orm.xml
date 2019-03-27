@@ -6,7 +6,7 @@
     
     <persistence-unit-metadata>
         <persistence-unit-defaults>
-            <schema>vertsysEZKL</schema>
+            <schema>VERTSYSEZKL</schema>
         </persistence-unit-defaults>
     </persistence-unit-metadata>
     

@@ -7,13 +7,13 @@
  * Dieser Quellcode ist lizenziert unter einer
  * Creative Commons Namensnennung 4.0 International Lizenz.
  */
-package dhbwka.wwi.vertsys.javaee.jtodo.tasks.web;
+package dhbwka.wwi.vertsys.javaee.vertsysEZKL.tasks.web;
 
-import dhbwka.wwi.vertsys.javaee.jtodo.tasks.ejb.CategoryBean;
-import dhbwka.wwi.vertsys.javaee.jtodo.tasks.ejb.TaskBean;
-import dhbwka.wwi.vertsys.javaee.jtodo.tasks.jpa.Category;
-import dhbwka.wwi.vertsys.javaee.jtodo.tasks.jpa.Task;
-import dhbwka.wwi.vertsys.javaee.jtodo.tasks.jpa.TaskStatus;
+import dhbwka.wwi.vertsys.javaee.vertsysEZKL.tasks.ejb.CategoryBean;
+import dhbwka.wwi.vertsys.javaee.vertsysEZKL.tasks.ejb.TaskBean;
+import dhbwka.wwi.vertsys.javaee.vertsysEZKL.tasks.jpa.Category;
+import dhbwka.wwi.vertsys.javaee.vertsysEZKL.tasks.jpa.Task;
+import dhbwka.wwi.vertsys.javaee.vertsysEZKL.tasks.jpa.TaskStatus;
 import java.io.IOException;
 import java.util.List;
 import javax.ejb.EJB;
