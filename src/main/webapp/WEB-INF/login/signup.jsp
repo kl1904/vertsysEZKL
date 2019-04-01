@@ -38,28 +38,28 @@
                     <input type="hidden" name="csrf_token" value="${csrf_token}">
 
                     <%-- Eingabefelder --%>
-                    <label for="signup_username">
+                    <%--<label for="signup_username">
                         Benutzername:
                         <span class="required">*</span>
-                    </label>
+                    </label>--%>
                     <div class="side-by-side">
-                        <input type="text" name="signup_username" value="${signup_form.values["signup_username"][0]}">
+                        <input type="text" name="signup_username" placeholder="Benutzername" value="${signup_form.values["signup_username"][0]}" >
                     </div>
-
-                    <label for="signup_password1">
+                    <br>
+                    <%--<label for="signup_password1">
                         Passwort:
                         <span class="required">*</span>
-                    </label>
+                    </label>--%>
                     <div class="side-by-side">
-                        <input type="password" name="signup_password1" value="${signup_form.values["signup_password1"][0]}">
+                        <input type="password" name="signup_password1" placeholder="Passwort" value="${signup_form.values["signup_password1"][0]}">
                     </div>
-
-                    <label for="signup_password2">
+                    <br>
+                    <%--<label for="signup_password2">
                         Passwort (wdh.):
                         <span class="required">*</span>
-                    </label>
+                    </label>--%>
                     <div class="side-by-side">
-                        <input type="password" name="signup_password2" value="${signup_form.values["signup_password2"][0]}">
+                        <input type="password" name="signup_password2" placeholder="Passwort (wdh.)" value="${signup_form.values["signup_password2"][0]}">
                     </div>
 
                     <%-- Button zum Abschicken --%>
