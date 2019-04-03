@@ -23,13 +23,25 @@
     </jsp:attribute>
 
     <jsp:attribute name="menu">
-        <div class="menuitem">
-            <a href="<c:url value="/app/dashboard/"/>">Dashboard</a>
-        </div>
-
-        <div class="menuitem">
-            <a href="<c:url value="/app/tasks/list/"/>">Liste</a>
-        </div>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+        <a class="nav-link " id="home-tab" data-toggle="tab" href="<c:url value="/app/dashboard/"/>" role="tab" aria-controls="home" aria-selected="true">Dashboard</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link  " id="home-tab" data-toggle="tab" href="<c:url value="/app/tasks/list/"/>" role="tab" aria-controls="home" aria-selected="true">Alle Gerichte</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="<c:url value="/app/tasks/task/new/"/>" role="tab" aria-controls="profile" aria-selected="false">Gerichte anlegen</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link active" id="contact-tab" data-toggle="tab" href="<c:url value="/app/tasks/categories/"/>" role="tab" aria-controls="contact" aria-selected="false">Mahlzeiten bearbeiten</a>
+        </li>
+        <c:if test="${not empty pageContext.request.userPrincipal}"> 
+        <li>    
+        <a class="nav-link active " id="home-tab" data-toggle="tab"  href="<c:url value="/logout/"/>" role="tab" aria-controls="home" aria-selected="true" class="icon-logout">Logout ${pageContext.request.userPrincipal.name}</a>
+        </li>
+        </c:if>
+        </ul>
     </jsp:attribute>
 
     <jsp:attribute name="content">
@@ -38,11 +50,10 @@
             <input type="hidden" name="csrf_token" value="${csrf_token}">
 
             <%-- Feld zum Anlegen einer neuen Kategorie --%>
-            <div class="column margin">
-                <label for="j_username">Neue Kategorie:</label>
-                <input type="text" name="name" value="${categories_form.values["name"][0]}">
-
-                <button type="submit" name="action" value="create" class="icon-pencil">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Neue Mahlzeit" aria-label="Neue Mahlzeit" aria-describedby="basic-addon2" name="name" value="${categories_form.values["name"][0]}">
+                <br>
+                <button type="submit" name="action" value="create" class="btn btn-secondary">
                     Anlegen
                 </button>
             </div>
@@ -60,7 +71,7 @@
             <c:choose>
                 <c:when test="${empty categories}">
                     <p>
-                        Es sind noch keine Kategorien vorhanden. 🐏
+                        Es sind noch keine Mahlzeiten vorhanden. 🐏
                     </p>
                 </c:when>
                 <c:otherwise>

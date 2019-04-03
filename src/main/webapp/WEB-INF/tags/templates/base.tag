@@ -20,7 +20,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8" />
+        <link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css"/>" />         
+        <script src="<c:url value="/js/bootstrap.min.js"/>"></script>
 
         <title>Essensliste : ${title}</title>
         
@@ -47,15 +48,7 @@
             </div>
 
             <%-- Menü --%>
-            <div id="menubar">
-                <jsp:invoke fragment="menu"/>
-
-                <c:if test="${not empty pageContext.request.userPrincipal}">
-                    <div class="menuitem">
-                        <a href="<c:url value="/logout/"/>" class="icon-logout">Logout ${pageContext.request.userPrincipal.name}</a>
-                    </div>
-                </c:if>
-            </div>
+                <jsp:invoke fragment="menu"/>            
         </header>
 
         <%-- Hauptinhalt der Seite --%>

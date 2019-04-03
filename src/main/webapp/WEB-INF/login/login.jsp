@@ -23,9 +23,13 @@
     </jsp:attribute>
 
     <jsp:attribute name="menu">
-        <div class="menuitem">
-            <a href="<c:url value="/signup/"/>">Registrieren</a>
-        </div>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+        <a class="nav-link active " id="home-tab" data-toggle="tab" href="<c:url value="/logout/"/>" role="tab" aria-controls="home" aria-selected="true">Login</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link " id="home-tab" data-toggle="tab" href="<c:url value="/signup/"/>" role="tab" aria-controls="home" aria-selected="true">Registrieren</a>
+        </li>
     </jsp:attribute>
 
     <jsp:attribute name="content">

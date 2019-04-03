@@ -23,15 +23,15 @@ public enum TaskStatus {
     public String getLabel() {
         switch (this) {
             case OPEN:
-                return "Offen";
+                return "Vegetarisch";
             case IN_PROGRESS:
-                return "In Bearbeitung";
+                return "Vegan";
             case FINISHED:
-                return "Erledigt";
+                return "Schwein";
             case CANCELED:
-                return "Abgebrochen";
+                return "Fleisch";
             case POSTPONED:
-                return "Zurückgestellt";
+                return "Nudeln";
             default:
                 return this.toString();
         }

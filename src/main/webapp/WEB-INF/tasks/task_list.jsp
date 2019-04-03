@@ -23,26 +23,34 @@
     </jsp:attribute>
 
     <jsp:attribute name="menu">
-        <div class="menuitem">
-            <a href="<c:url value="/app/dashboard/"/>">Dashboard</a>
-        </div>
-
-        <div class="menuitem">
-            <a href="<c:url value="/app/tasks/task/new/"/>">Aufgabe anlegen</a>
-        </div>
-
-        <div class="menuitem">
-            <a href="<c:url value="/app/tasks/categories/"/>">Kategorien bearbeiten</a>
-        </div>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+        <a class="nav-link " id="home-tab" data-toggle="tab" href="<c:url value="/app/dashboard/"/>" role="tab" aria-controls="home" aria-selected="true">Dashboard</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link active " id="home-tab" data-toggle="tab" href="<c:url value="/app/tasks/list/"/>" role="tab" aria-controls="home" aria-selected="true">Alle Gerichte</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="<c:url value="/app/tasks/task/new/"/>" role="tab" aria-controls="profile" aria-selected="false">Gerichte anlegen</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" id="contact-tab" data-toggle="tab" href="<c:url value="/app/tasks/categories/"/>" role="tab" aria-controls="contact" aria-selected="false">Mahlzeiten bearbeiten</a>
+        </li>
+        
+        </ul>   
     </jsp:attribute>
 
     <jsp:attribute name="content">
         <%-- Suchfilter --%>
         <form method="GET" class="horizontal" id="search">
-            <input type="text" name="search_text" value="${param.search_text}" placeholder="Beschreibung"/>
+            <div class="input-group mb-3" >
+            <input type="text" name="search_text" value="${param.search_text}" class="form-control" placeholder="Beschreibung" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            
+            
+           
 
             <select name="search_category">
-                <option value="">Alle Kategorien</option>
+                <option value="">Alle Mahlzeiten</option>
 
                 <c:forEach items="${categories}" var="category">
                     <option value="${category.id}" ${param.search_category == category.id ? 'selected' : ''}>
@@ -52,7 +60,7 @@
             </select>
 
             <select name="search_status">
-                <option value="">Alle Stati</option>
+                <option value="">Alle Gerichtskategorien</option>
 
                 <c:forEach items="${statuses}" var="status">
                     <option value="${status}" ${param.search_status == status ? 'selected' : ''}>
@@ -61,9 +69,10 @@
                 </c:forEach>
             </select>
 
-            <button class="icon-search" type="submit">
-                Suchen
-            </button>
+            <div class="input-group-prepend">
+            <button class="btn btn-outline-secondary" type="submit">Suchen</button>
+            </div>
+            </div>
         </form>
 
         <%-- Gefundene Aufgaben --%>
@@ -76,18 +85,19 @@
             <c:otherwise>
                 <jsp:useBean id="utils" class="dhbwka.wwi.vertsys.javaee.vertsysEZKL.common.web.WebUtils"/>
                 
-                <table>
+                <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>Bezeichnung</th>
-                            <th>Kategorie</th>
-                            <th>Eigentümer</th>
-                            <th>Status</th>
-                            <th>Fällig am</th>
+                            <th scope="col">Bezeichnung</th>
+                            <th scope="col">Kategorie</th>
+                            <th scope="col">Eigentümer</th>
+                            <th scope="col">Gerichtskategorie</th>
+                            <th scope="col">Fällig am</th>
                         </tr>
                     </thead>
                     <c:forEach items="${tasks}" var="task">
                         <tr>
+                            <th scope="row">1</th>
                             <td>
                                 <a href="<c:url value="/app/tasks/task/${task.id}/"/>">
                                     <c:out value="${task.shortText}"/>
