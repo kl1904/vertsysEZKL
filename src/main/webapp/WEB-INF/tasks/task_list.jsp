@@ -15,7 +15,7 @@
 
 <template:base>
     <jsp:attribute name="title">
-        Liste der Aufgaben
+        Liste der Gerichte
     </jsp:attribute>
 
     <jsp:attribute name="head">
@@ -36,8 +36,12 @@
         <li class="nav-item">
         <a class="nav-link" id="contact-tab" data-toggle="tab" href="<c:url value="/app/tasks/categories/"/>" role="tab" aria-controls="contact" aria-selected="false">Mahlzeiten bearbeiten</a>
         </li>
-        
-        </ul>   
+        <c:if test="${not empty pageContext.request.userPrincipal}"> 
+        <li>    
+        <a class="nav-link active " id="home-tab" data-toggle="tab"  href="<c:url value="/logout/"/>" role="tab" aria-controls="home" aria-selected="true" class="icon-logout">Logout ${pageContext.request.userPrincipal.name}</a>
+        </li>
+        </c:if>
+        </ul>     
     </jsp:attribute>
 
     <jsp:attribute name="content">
@@ -49,9 +53,8 @@
             
            
 
-            <select name="search_category">
+            <select class="form-control"   name="search_category">
                 <option value="">Alle Mahlzeiten</option>
-
                 <c:forEach items="${categories}" var="category">
                     <option value="${category.id}" ${param.search_category == category.id ? 'selected' : ''}>
                         <c:out value="${category.name}" />
@@ -59,19 +62,15 @@
                 </c:forEach>
             </select>
 
-            <select name="search_status">
+            <select class="form-control"   name="search_status">
                 <option value="">Alle Gerichtskategorien</option>
-
                 <c:forEach items="${statuses}" var="status">
                     <option value="${status}" ${param.search_status == status ? 'selected' : ''}>
                         <c:out value="${status.label}"/>
                     </option>
                 </c:forEach>
             </select>
-
-            <div class="input-group-prepend">
-            <button class="btn btn-outline-secondary" type="submit">Suchen</button>
-            </div>
+            <button class="btn btn-secondary" type="submit">Suchen</button>
             </div>
         </form>
 
@@ -97,7 +96,6 @@
                     </thead>
                     <c:forEach items="${tasks}" var="task">
                         <tr>
-                            <th scope="row">1</th>
                             <td>
                                 <a href="<c:url value="/app/tasks/task/${task.id}/"/>">
                                     <c:out value="${task.shortText}"/>

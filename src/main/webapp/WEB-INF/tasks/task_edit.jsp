@@ -56,18 +56,14 @@
             <div class="column">
                 <%-- CSRF-Token --%>
                 <input type="hidden" name="csrf_token" value="${csrf_token}">
-
+ 
                 <%-- Eingabefelder --%>
                 <label for="task_owner">Eigentümer:</label>
+                <input type="text" class="form-control"  name="task_owner" value="${task_form.values["task_owner"][0]}" readonly="readonly">
+                <label for="task_category">Mahlzeiten:</label>
                 <div class="side-by-side">
-                    <input type="text" name="task_owner" value="${task_form.values["task_owner"][0]}" readonly="readonly">
-                </div>
-
-                <label for="task_category">Kategorie:</label>
-                <div class="side-by-side">
-                    <select name="task_category">
-                        <option value="">Keine Kategorie</option>
-
+                    <select class="form-control"  name="task_category">
+                        <option value="">Keine Mahlzeiten</option>
                         <c:forEach items="${categories}" var="category">
                             <option value="${category.id}" ${task_form.values["task_category"][0] == category.id.toString() ? 'selected' : ''}>
                                 <c:out value="${category.name}" />
@@ -81,16 +77,16 @@
                     <span class="required">*</span>
                 </label>
                 <div class="side-by-side">
-                    <input type="text" name="task_due_date" value="${task_form.values["task_due_date"][0]}">
-                    <input type="text" name="task_due_time" value="${task_form.values["task_due_time"][0]}">
+                    <input class="form-control"   type="text" name="task_due_date" value="${task_form.values["task_due_date"][0]}">
+                    <input class="form-control"   type="text" name="task_due_time" value="${task_form.values["task_due_time"][0]}">
                 </div>
 
                 <label for="task_status">
-                    Status:
+                    Gerichtskategorie:
                     <span class="required">*</span>
                 </label>
                 <div class="side-by-side margin">
-                    <select name="task_status">
+                    <select class="form-control"  name="task_status">
                         <c:forEach items="${statuses}" var="status">
                             <option value="${status}" ${task_form.values["task_status"][0] == status ? 'selected' : ''}>
                                 <c:out value="${status.label}"/>
@@ -104,19 +100,19 @@
                     <span class="required">*</span>
                 </label>
                 <div class="side-by-side">
-                    <input type="text" name="task_short_text" value="${task_form.values["task_short_text"][0]}">
+                    <input class="form-control"   type="text" name="task_short_text" value="${task_form.values["task_short_text"][0]}">
                 </div>
 
                 <label for="task_long_text">
                     Beschreibung:
                 </label>
                 <div class="side-by-side">
-                    <textarea name="task_long_text"><c:out value="${task_form.values['task_long_text'][0]}"/></textarea>
+                    <textarea rows="5" class="form-control"   name="task_long_text"><c:out value="${task_form.values['task_long_text'][0]}"/></textarea>
                 </div>
 
                 <%-- Button zum Abschicken --%>
                 <div class="side-by-side">
-                    <button class="icon-pencil" type="submit" name="action" value="save">
+                    <button class="btn btn-secondary" type="submit" name="action" value="save">
                         Sichern
                     </button>
 

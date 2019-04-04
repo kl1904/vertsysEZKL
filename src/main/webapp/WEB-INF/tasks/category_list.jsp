@@ -15,7 +15,7 @@
 
 <template:base>
     <jsp:attribute name="title">
-        Kategorien bearbeiten
+        Mahlzeiten bearbeiten
     </jsp:attribute>
 
     <jsp:attribute name="head">
@@ -50,14 +50,12 @@
             <input type="hidden" name="csrf_token" value="${csrf_token}">
 
             <%-- Feld zum Anlegen einer neuen Kategorie --%>
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Neue Mahlzeit" aria-label="Neue Mahlzeit" aria-describedby="basic-addon2" name="name" value="${categories_form.values["name"][0]}">
+                         <input type="text" name="name" value="${categories_form.values["name"][0]}" class="form-control" placeholder="Beschreibung" aria-label="name" aria-describedby="basic-addon2">
                 <br>
                 <button type="submit" name="action" value="create" class="btn btn-secondary">
                     Anlegen
                 </button>
-            </div>
-
+         
             <%-- Fehlermeldungen --%>
             <c:if test="${!empty categories_form.errors}">
                 <ul class="errors margin">

@@ -35,26 +35,23 @@
     <jsp:attribute name="content">
         <div class="container">
             <form action="j_security_check" method="post" class="stacked">
-                <div class="column">
                     <%-- Eingabefelder --%>
                     <%--<label for="j_username">
-                        Benutzername:
-                        <span class="required">*</span>
+                    Benutzername:
+                    <span class="required">*</span>
                     </label>>--%>
-                    <input type="text" name="j_username" placeholder="Benutzername">
-
+                    <input type="text" class="form-control" aria-label="Benutzername" aria- name="j_username" placeholder="Benutzername">
                     <%--<label for="j_password">
                         Passwort:
                         <span class="required">*</span>
                     </label>--%>
                     <br>
-                    <input type="password" name="j_password" placeholder="Passwort">
-
+                    <input type="password" class="form-control"  name="j_password" placeholder="Passwort">
+                    <br>
                     <%-- Button zum Abschicken --%>
-                    <button class="icon-login" type="submit">
+                    <button class="btn btn-secondary" type="submit">
                         Einloggen
                     </button>
-                </div>
             </form>
         </div>
     </jsp:attribute>

@@ -25,16 +25,16 @@
     <jsp:attribute name="menu">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item">
-        <a class="nav-link " id="home-tab" data-toggle="tab" href="<c:url value="/logout/"/>" role="tab" aria-controls="home" aria-selected="true">Nochmal versuchen</a>
+        <a class="nav-link " id="home-tab" data-toggle="tab" href="<c:url value="/logout/"/>" role="tab" aria-controls="home" aria-selected="true">Login</a>
         </li>
         <li class="nav-item">
         <a class="nav-link " id="home-tab" data-toggle="tab" href="<c:url value="/signup/"/>" role="tab" aria-controls="home" aria-selected="true">Registrieren</a>
         </li>
-    </jsp:attribute>
+        </jsp:attribute>
 
     <jsp:attribute name="content">
         <p>
-            Das hat leider nicht geklappt. 🐻
+            Das hat leider nicht geklappt 🐻
         </p>
     </jsp:attribute>
 </template:base>
