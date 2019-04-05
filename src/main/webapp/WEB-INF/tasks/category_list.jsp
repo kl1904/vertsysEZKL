@@ -15,7 +15,7 @@
 
 <template:base>
     <jsp:attribute name="title">
-        Mahlzeiten bearbeiten
+        Kategorien bearbeiten
     </jsp:attribute>
 
     <jsp:attribute name="head">
@@ -50,12 +50,13 @@
             <input type="hidden" name="csrf_token" value="${csrf_token}">
 
             <%-- Feld zum Anlegen einer neuen Kategorie --%>
-                         <input type="text" name="name" value="${categories_form.values["name"][0]}" class="form-control" placeholder="Beschreibung" aria-label="name" aria-describedby="basic-addon2">
+                         <input type="text" name="name" value="${categories_form.values["name"][0]}" class="form-control" placeholder="Bezeichnung" aria-label="name" aria-describedby="basic-addon2">
                 <br>
                 <button type="submit" name="action" value="create" class="btn btn-secondary">
                     Anlegen
                 </button>
          
+
             <%-- Fehlermeldungen --%>
             <c:if test="${!empty categories_form.errors}">
                 <ul class="errors margin">
@@ -84,7 +85,7 @@
                             </c:forEach>
                         </div>
 
-                        <button type="submit" name="action" value="delete" class="icon-trash">
+                        <button type="submit" name="action" value="delete" class="btn btn-secondary">
                             Markierte löschen
                         </button>
                     </div>

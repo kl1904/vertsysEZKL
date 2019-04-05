@@ -117,7 +117,7 @@
                     </button>
 
                     <c:if test="${edit}">
-                        <button class="icon-trash" type="submit" name="action" value="delete">
+                        <button class="btn btn-secondary" type="submit" name="action" value="delete">
                             Löschen
                         </button>
                     </c:if>
