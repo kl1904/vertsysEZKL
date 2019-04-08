@@ -40,6 +40,16 @@ public class User implements Serializable {
     private static final long serialVersionUID = 1L;
     private static final char[] HEX_ARRAY = "0123456789ABCDEF".toCharArray();
 
+    @Column(name = "VORNAME", length = 64)
+    @Size(min = 5, max = 64, message = "Der Benutzername muss zwischen fünf und 64 Zeichen lang sein.")
+    @NotNull(message = "Der Vorname darf nicht leer sein.")
+    private String vorname;
+    
+    @Column(name = "NACHNAME", length = 64)
+    @Size(min = 5, max = 64, message = "Der Benutzername muss zwischen fünf und 64 Zeichen lang sein.")
+    @NotNull(message = "Der Nachname darf nicht leer sein.")
+    private String nachname;
+
     @Id
     @Column(name = "USERNAME", length = 64)
     @Size(min = 5, max = 64, message = "Der Benutzername muss zwischen fünf und 64 Zeichen lang sein.")
@@ -69,9 +79,13 @@ public class User implements Serializable {
     List<Task> tasks = new ArrayList<>();
 
     //<editor-fold defaultstate="collapsed" desc="Konstruktoren">
-    public User() {
-    }
-
+    public User(String vorname, String nachname, String username, String password) {
+        this.vorname = vorname;
+        this.nachname = nachname;
+        this.username = username;
+        this.password.password = password;
+        this.passwordHash = this.hashPassword(password);
+        }
     public User(String username, String password) {
         this.username = username;
         this.password.password = password;
@@ -80,6 +94,22 @@ public class User implements Serializable {
     //</editor-fold>
 
     //<editor-fold defaultstate="collapsed" desc="Setter und Getter">
+        public String getVorname() {
+        return vorname;
+    }
+
+    public void setVorname(String vorname) {
+        this.vorname = vorname;
+    }
+    
+    public String getNachname() {
+        return nachname;
+    }
+
+    public void setNachname(String nachname) {
+        this.nachname = nachname;
+    }
+
     public String getUsername() {
         return username;
     }
