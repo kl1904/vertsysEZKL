@@ -32,7 +32,7 @@
         <a class="nav-link" id="profile-tab" data-toggle="tab" href="<c:url value="/app/tasks/task/new/"/>" role="tab" aria-controls="profile" aria-selected="false">Gerichte anlegen</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link active" id="contact-tab" data-toggle="tab" href="<c:url value="/app/tasks/categories/"/>" role="tab" aria-controls="contact" aria-selected="false">Mahlzeiten bearbeiten</a>
+        <a class="nav-link " id="contact-tab" data-toggle="tab" href="<c:url value="/app/tasks/categories/"/>" role="tab" aria-controls="contact" aria-selected="false">Mahlzeiten bearbeiten</a>
         </li>
         <li class="nav-item">
         <a class="nav-link active" id="myprofile" data-toggle="tab" href="<c:url value="/app/tasks/benutzerverwaltung/"/>" role="tab" aria-controBenutzerls="contact" aria-selected="false">Mein Benutzer</a>
@@ -72,7 +72,7 @@
                     <br>
                     <%-- Button zum Sichern --%>
                     <div class="side-by-side">
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" class="btn btn-secondary">
                             Speichern
                         </button>
                     </div>
