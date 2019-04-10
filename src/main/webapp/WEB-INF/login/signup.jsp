@@ -41,22 +41,25 @@
                     <%-- CSRF-Token --%>
                     <input type="hidden" class="form-control" name="csrf_token" value="${csrf_token}">
                     
-                    <div class="side-by-side">
-                    <input type="text" class="form-control" name="vorname" placeholder="Vorname" value="${signup_form.values["vorname"][0]}" >
-                    </div>
-                    <br>
-                    <div class="side-by-side">
-                    <input type="text" class="form-control" name="nachname" placeholder="Nachname" value="${signup_form.values["nachname"][0]}" >
-                    </div>
-                    <br>
+                 
 
-                    <%-- Eingabefelder --%>
+                    <%-- Eingabefelder 
+                    
+                    
                     <%--<label for="signup_username">
                         Benutzername:
                         <span class="required">*</span>
                     </label>--%>
                     <div class="side-by-side">
                     <input type="text" class="form-control" name="signup_username" placeholder="Benutzername" value="${signup_form.values["signup_username"][0]}" >
+                    </div>
+                    <br>
+                    <div class="side-by-side">
+                    <input type="text" class="form-control" name="vorname" placeholder="Vorname" value="${signup_form.values["vorname"][0]}" >
+                    </div>
+                    <br>
+                    <div class="side-by-side">
+                    <input type="text" class="form-control" name="nachname" placeholder="Nachname" value="${signup_form.values["nachname"][0]}" >
                     </div>
                     <br>
                     <%--<label for="signup_password1">

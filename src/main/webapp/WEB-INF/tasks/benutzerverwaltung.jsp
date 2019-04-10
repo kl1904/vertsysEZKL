@@ -1,5 +1,5 @@
 <%-- 
-    Document   : Benutzerverwaltung
+    Document   : benutzerverwaltung
     Created on : 05.04.2019, 15:39:01
     Author     : KE_LE
 --%>
@@ -12,7 +12,10 @@
 
 
 <template:base>
-
+    
+    <jsp:attribute name="title">
+        Benutzerverwaltung
+    </jsp:attribute>
     <jsp:attribute name="head">
         <link rel="stylesheet" href="<c:url value="/css/task_edit.css"/>" />
     </jsp:attribute>
@@ -32,7 +35,7 @@
         <a class="nav-link active" id="contact-tab" data-toggle="tab" href="<c:url value="/app/tasks/categories/"/>" role="tab" aria-controls="contact" aria-selected="false">Mahlzeiten bearbeiten</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link active" id="myprofile" data-toggle="tab" href="<c:url value="/app/tasks/Benutzerverwaltung/"/>" role="tab" aria-controls="contact" aria-selected="false">Mein Benutzer</a>
+        <a class="nav-link active" id="myprofile" data-toggle="tab" href="<c:url value="/app/tasks/benutzerverwaltung/"/>" role="tab" aria-controBenutzerls="contact" aria-selected="false">Mein Benutzer</a>
         </li>
         <c:if test="${not empty pageContext.request.userPrincipal}"> 
         <li>    

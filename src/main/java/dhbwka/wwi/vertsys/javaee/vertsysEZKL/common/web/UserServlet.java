@@ -44,7 +44,7 @@ public class UserServlet extends HttpServlet {
        
        request.setAttribute("benutzer", benutzer);
         
-       request.getRequestDispatcher("/WEB-INF/tasks/benutzerverwaltung").forward(request, response);
+       request.getRequestDispatcher("/WEB-INF/tasks/benutzerverwaltung.jsp").forward(request, response);
     }
 
     @Override
@@ -55,32 +55,14 @@ public class UserServlet extends HttpServlet {
         
         String vorname = request.getParameter("vorname");
         String nachname = request.getParameter("nachname");
-        String passwortAlt = request.getParameter("passwort_alt");
-        String passwortNeu = request.getParameter("passwort_neu");
+        benutzer.setVorname(vorname);
+        benutzer.setNachname(nachname);
+        userBean.update(benutzer);
+        response.sendRedirect(WebUtils.appUrl(request, "/app/tasks/benutzerverwaltung/"));
         
-        if (benutzer.checkPassword(passwortAlt)) {
-            benutzer.setNachname(nachname);
-            benutzer.setVorname(vorname); 
-            
-            if (!passwortNeu.equals("")) {
-                try {
-                userBean.changePassword(benutzer, passwortAlt, passwortNeu);
-                }
-                catch (InvalidCredentialsException e) {
-                }
-            }
-            
-            benutzer = userBean.update(benutzer);
-            response.sendRedirect(WebUtils.appUrl(request, "/app/dashboard/"));
-        }                             
         
-        else {
-            String error = "Passwort falsch!";
-            request.setAttribute("error", error);
-            request.setAttribute("benutzer", benutzer);            
-            response.sendRedirect(request.getRequestURI());
         }
         
     }
 
-}
+
